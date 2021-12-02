@@ -1,41 +1,57 @@
-import { getData } from "./integration/Integration";
+import { getData, getOrders } from "./integration/Integration";
 import { useState } from "react";
 import './App.css';
 
 function App() {
-    const [payload, setPayload] = useState("")
+    const [list, setList] = useState("")
     async function callTheApi() {
-        //mock api
-        list = [
-            {
-                id: '01',
-                name: 'John Deo',
-                email: 'john@gmail.com',
-                phone: '202-555-0163'
-            },
-            {
-                id: '02',
-                name: 'Brad Pitt',
-                email: 'fightclud@gmail.com',
-                phone: '202-555-0106'
-            },
-        ];
-        setPayload((await getData()).data.payload)
+        // mockApi();
+        let orders = await getOrders();
+        console.log(orders.data);
+        setList(orders.data);
     }
-    var list;
-    //call the api to retrieve list
-    // callTheApi();
+    function mockApi() {
+        setTimeout(() => {
+            setList([
+                {
+                    id: '01',
+                    name: 'John Deu',
+                    description: 'john@gmail.com',
+                },
+                {
+                    id: '02',
+                    name: 'Brad Pitt',
+                    description: 'fightclud@gmail.com',
+                },
+            ]);
+        }, 1200);
+    }
 
     return (
         <>
             <div class="list">
-                    {list? list.map((data) => (
-                        <div class="list-element" key={data.id}>
-                            <p>{data.name}</p>
-                            <p>{data.email}</p>
-                            <p>{data.phone}</p>
+                {list ? list.map((data) => (
+                    <div class="list-element" key={data.id}>
+                        <div class="el-id">
+                            <div class="label">ID</div>
+                            <div class="value">{data.id}</div>
                         </div>
-                    )) : <div class="loader-container"><div class="loader"></div></div>}
+                        <div class="el-info">
+                            <div class="el-name">
+                                <div class="label">NAME</div>
+                                <div class="value">{data.name}</div>
+                            </div>
+                            <div class="el-desc">
+                                <div class="label">DESCRIPTION</div>
+                                <div class="value">{data.description}</div>
+                            </div>
+                        </div>
+                    </div>
+                )) :
+                    <div class="loader-container">
+                        <button onClick={callTheApi}>Refresh list</button>
+                        <div class="loader"></div>
+                    </div>}
             </div>
         </>
     )

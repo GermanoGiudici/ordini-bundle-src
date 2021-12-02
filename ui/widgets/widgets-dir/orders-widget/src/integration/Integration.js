@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const endpoint = `${process.env.REACT_APP_PUBLIC_API_URL}/example/`
+const ordersEndpoint = `${process.env.REACT_APP_PUBLIC_API_URL}/order/`
 
 const addAuthorizationRequestConfig = (config={})=>{
     let defaultOptions = getDefaultOptions();
@@ -32,5 +33,6 @@ const getDefaultOptions = () => {
 export const getData = async ()=>
   await axios.get(endpoint, addAuthorizationRequestConfig())
 
-
+export const getOrders = async () =>
+    await axios.get(ordersEndpoint, addAuthorizationRequestConfig())
 
