@@ -18,4 +18,4 @@ class EtApp extends HTMLElement {
     }
 }
 
-customElements.get('et-app') || customElements.define("et-app", EtApp)
+customElements.get('et-orders') || customElements.define("et-orders", EtApp)
