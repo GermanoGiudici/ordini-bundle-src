@@ -8,8 +8,8 @@
         <version>2.4.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.entando</groupId>
-    <artifactId>ent-project-template</artifactId>
+    <groupId>com.entando.training</groupId>
+    <artifactId>order_bundle</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <description>Template for an ent compatible project</description>
     <properties>
@@ -98,7 +98,7 @@
                             <image>adoptopenjdk/openjdk11:x86_64-alpine-jdk-11.0.12_7</image>
                         </from>
                         <to>
-                            <image>CHANGE-IT/${project.artifactId}:${project.version}</image>
+                            <image>germanogiudici/${project.artifactId}:${project.version}</image>
                         </to>
                         <container>
                             <mainClass>com.entando.hub.catalog.EntandoMSApplication</mainClass>
