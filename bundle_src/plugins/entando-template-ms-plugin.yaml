@@ -1,4 +1,4 @@
-image: germanogiudici/order_bundle:0.0.1-SNAPSHOT
+image: 1756342/order_bundle:0.0.2
 dbms: none
 ingressPath: "/entando-template-api"
 healthCheckPath: "/actuator/health"

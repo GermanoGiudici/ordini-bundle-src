@@ -1,8 +1,8 @@
-code: ent-prj-tmpl-bundle
+code: ent-prj-orders-bundle
 description: Template for ent projects
 components:
   plugins:
     - plugins/entando-template-ms-plugin.yaml
   widgets:
-    - ui/widgets/widgets-dir/et-widget/et-widget-descriptor.yaml
+    - ui/widgets/widgets-dir/orders-widget/orders-widget-descriptor.yaml
 
