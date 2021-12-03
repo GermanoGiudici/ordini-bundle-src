@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const endpoint = `${process.env.REACT_APP_PUBLIC_API_URL}/example/`
-const ordersEndpoint = `${process.env.REACT_APP_PUBLIC_API_URL}/order/`
+const ordersEndpoint = `${process.env.REACT_APP_PUBLIC_API_URL}/orders/`
 
 const addAuthorizationRequestConfig = (config={})=>{
     let defaultOptions = getDefaultOptions();

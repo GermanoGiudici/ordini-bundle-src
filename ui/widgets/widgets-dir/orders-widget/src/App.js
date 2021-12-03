@@ -49,8 +49,14 @@ function App() {
                     </div>
                 )) :
                     <div class="loader-container">
-                        <button onClick={callTheApi}>Refresh list</button>
-                        <div class="loader"></div>
+                        <div class="loader-content">
+                            <button class="refresh" onClick={callTheApi}>Refresh my list</button>
+                            <div class="loader-main">
+                                <div class="loader loader-1"></div>
+                                <div class="loader loader-2"></div>
+                                <div class="loader loader-3"></div>
+                            </div>
+                        </div>
                     </div>}
             </div>
         </>

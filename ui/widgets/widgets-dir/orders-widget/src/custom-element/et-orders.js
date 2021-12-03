@@ -6,7 +6,7 @@ import App from '../App'
 
 class EtApp extends HTMLElement {
     connectedCallback() {
-        this.mountPoint = document.createElement('span')
+        this.mountPoint = document.createElement('div')
         this.render()
     }
 

@@ -1,14 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
 .list {
     border-radius: 10px;
     padding: 0px 20px;
+    position: relative;
+    min-height: 500px;
+    margin-top: 12px;
+    display: block;
 }
 
 .list-element {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    padding: 10px;
     margin: 20px 0;
     transition: 0.3s;
+    overflow: hidden;
+    background: #002f87;
+    color: white;
 }
 
 .list-element:hover {
@@ -19,33 +29,59 @@
     position: absolute;
     inset: 0 0 0 0;
 }
-.loader {
+
+.loader-content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.loader-main {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.loader {
     width: 20px;
     height: 20px;
-    background: #002f87;
+    background: #009ff0;
     border-radius: 5px;
-    animation: example 1.2s infinite;
+    animation: example 3s infinite;
+}
+.loader-1 {
+    animation-delay: 0s;
+}
+.loader-2 {
+    animation-delay: 1s;
+}
+.loader-3 {
+    animation-delay: 2s;
 }
 
 @keyframes example {
     0% {
         transform: rotate(0deg);
     }
+    33% {
+        transform: rotate(360deg);
+    }
     100% {
         transform: rotate(360deg);
     }
 }
 
-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: -60px;
+button.refresh {
+    display: block;
+    width: 120px;
+    height: 40px;
+    background: #009ff0;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
 .label {
@@ -62,13 +98,17 @@ button {
 
 .el-id {
     font-size: 18px;
-    padding-right: 20px;
+    padding: 0 20px;
     align-self: center;
     text-align: center;
+    line-height: 1.2;
 }
 
 .el-info {
     width: 100%;
+    background: white;
+    color: black;
+    padding: 10px;
 }
 
 .el-name {
