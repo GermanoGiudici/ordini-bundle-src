@@ -1,0 +1,6 @@
+code: et-orders
+titles:
+  en: Entando Template MF
+  it: Entando Template MF
+group: free
+customUiPath: orders-widget.ftl
